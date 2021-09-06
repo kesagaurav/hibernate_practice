@@ -1,0 +1,11 @@
+package com.gaurav.dbutil;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+public class HibernateUtil {
+private Session ses;
+
+	public static SessionFactory sf=new Configuration().configure("hibernate.cfg").
+
+}

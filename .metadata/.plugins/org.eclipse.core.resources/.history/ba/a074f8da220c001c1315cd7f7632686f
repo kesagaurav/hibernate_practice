@@ -1,0 +1,13 @@
+package com.gaurav.model;
+
+public class Marvel {
+
+	public int id;
+	public String name;
+	public String color;
+	public String weapons;
+	
+	
+	
+	
+}

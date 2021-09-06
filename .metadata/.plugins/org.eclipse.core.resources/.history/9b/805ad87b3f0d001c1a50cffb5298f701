@@ -1,0 +1,18 @@
+package com.gaurav;
+
+import com.gaurav.dao.VillianCrudDao;
+import com.gaurav.dbutil.HibernateUtil;
+
+public class Main {
+
+	
+	public static void main(String[] args) {
+		
+		
+		HibernateUtil hutil=new HibernateUtil();
+		VillianCrudDao vDao=new VillianCrudDao(hutil);
+		
+		
+		
+	}
+}

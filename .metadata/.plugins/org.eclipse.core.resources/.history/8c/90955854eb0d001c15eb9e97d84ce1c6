@@ -1,0 +1,86 @@
+package com.gaurav.hero.dao;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.gaurav.dbutil.HibernateUtil;
+import com.gaurav.model.Marvel;
+import com.gaurav.model.Villian;
+
+public class HeroVillianDao {
+
+	private HibernateUtil hutil;
+	public HeroVillianDao() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public HeroVillianDao(HibernateUtil hutil) {
+		super();
+		this.hutil = hutil;
+	}
+	
+	
+	public void insert(Marvel mar) {
+		Session ses=hutil.getSession();
+		Transaction t=ses.beginTransaction();
+		ses.save(mar);
+		t.commit();
+		
+	}
+	
+	
+	public void insert(Villian v) {
+		Session ses=hutil.getSession();
+		Transaction t=ses.beginTransaction();
+		ses.save(v);
+		t.commit();
+	}
+	
+	
+	public void update() {
+		Session ses=hutil.getSession();
+		Transaction t=ses.beginTransaction();
+		String hql="update  com.gaurav.model.Marvel set name=:name,weapons=:weapons where color=:color";
+		Query q=ses.createQuery("update  com.gaurav.model.Marvel set name=:name,weapons=:weapons where color=:color ");
+		q.setParameter("name","blackwidow");
+		q.setParameter("weapons","gun and sticks");
+		q.setParameter("color","black");
+		List<Marvel> marList=q.list();
+		marList.forEach(e->System.out.println( "updated items are  "  + e.getId() + " his name " +  e.getName() + "weapons are" + e.getWeapons()));
+		t.commit();
+		
+	}
+	
+	public void delete() {
+		
+	}
+	
+	
+	public List<Marvel> getAllMarvels(){
+		Session ses = hutil.getSession();
+		Query query = ses.createQuery("from com.gaurav.model.Marvel");
+		List<Marvel> marList = query.list();
+		if (marList.size() == 0) {
+			System.out.println("sorry they are no elements  plz insert some values");
+		} else {
+			marList.forEach(e -> System.out.println(e));
+		}
+
+		return marList;
+
+	}
+	
+	public void joins() {
+		Session ses=hutil.getSession();
+		//Query q=ses.createQuery("from com.gaurav.model.Marvel m JOIN com.gaurav.model.Villian v from m.id=v.id");
+		
+	}
+	 
+	
+	
+	
+}

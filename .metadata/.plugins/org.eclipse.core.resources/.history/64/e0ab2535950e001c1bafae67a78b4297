@@ -1,0 +1,18 @@
+package com.gaurav.powerdao;
+
+import com.gaurav.dbutil.HibernateUtil;
+
+public class PowerDao {
+	private HibernateUtil hutil;
+
+	public HeroVillianDao() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public HeroVillianDao(HibernateUtil hutil) {
+		super();
+		this.hutil = hutil;
+	}
+
+}

@@ -1,0 +1,23 @@
+package com.gaurav.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table
+public class Power {
+
+	public int power_id;
+	public String powers;
+	public Power() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Power (String powers) {
+		super();
+		this.powers = powers;
+	}
+	
+	
+	
+}

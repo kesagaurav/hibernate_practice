@@ -1,0 +1,13 @@
+package com.gaurav.dao;
+
+import org.hibernate.Session;
+
+import com.gaurav.dbutil.HibernateUtil;
+import com.gaurav.model.Villian;
+
+public class VillianCrudDao {
+
+	
+	
+	
+}

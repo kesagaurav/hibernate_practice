@@ -1,0 +1,45 @@
+package com.gaurav.dao;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.gaurav.dbutil.HibernateUtil;
+import com.gaurav.model.Villian;
+
+public class VillianCrudDao {
+
+	private HibernateUtil hutil;
+
+	public VillianCrudDao() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public VillianCrudDao(HibernateUtil hutil) {
+		super();
+		this.hutil = hutil;
+	}
+
+	
+	public void insert(Villian v) {
+		Session ses=hutil.getSession();
+		Transaction t=ses.beginTransaction();
+		ses.save(v);
+		t.commit();
+	}
+	
+	public void delete(int id) {
+		Villian villian=new Villian();
+		Session ses=hutil.getSession();
+		Transaction t=ses.beginTransaction();
+		if(villian.getId()==0) {
+			System.out.println("\n they are no villians plz insert some of them");
+		}else {
+			ses.delete(villian.getId());
+		}
+		
+	}
+	
+	
+	
+}

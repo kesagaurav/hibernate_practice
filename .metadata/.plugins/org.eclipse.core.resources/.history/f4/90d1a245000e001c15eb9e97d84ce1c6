@@ -1,0 +1,60 @@
+package com.gaurav;
+
+import com.gaurav.dbutil.HibernateUtil;
+import com.gaurav.hero.dao.HeroVillianDao;
+import com.gaurav.model.Marvel;
+import com.gaurav.model.Villian;
+import com.gaurav.villian.dao.VillianDao;
+
+public class HeroVillianMain {
+
+	public static void main(String[] args) {
+
+		HibernateUtil hutil=new HibernateUtil();
+		HeroVillianDao mcDao=new HeroVillianDao(hutil);
+		VillianDao vDao=new VillianDao(hutil);
+		Villian v1=new Villian("redskull","red","guns");
+		Villian v2=new Villian("doctoroctopuss","black","octopussstings");
+		Villian v3=new Villian("greengoblin","green","glider");
+		Villian v4=new Villian("dormamu","pink","magic");
+		Villian v5=new Villian("carnage","red","like spider webs");
+		Villian v6=new Villian("thanos","pink","infinity_gaunlet");
+		Marvel mar=new Marvel("ironman","red","missles",v1);
+		Marvel mar1=new Marvel("captainamerica","blue","sheild",v2);
+		Marvel mar2=new Marvel("blackwidwo","black","gun",v3);
+		Marvel mar3=new Marvel("nickfury","one eyed man","nullifeir",v4);
+		Marvel mar4=new Marvel("hulk","green","strongarms",v5);
+		Marvel mar5=new Marvel("vamplire","red","shadows",v6);
+		Marvel mar6=new Marvel("redhulk","red","nullifiernadgun",v1);
+		
+//		mcDao.insert(mar);
+//		mcDao.insert(mar1);
+//		mcDao.insert(mar2);
+//		mcDao.insert(mar3);
+//		mcDao.insert(mar4);
+//		mcDao.insert(mar5);
+//		mcDao.insert(mar6);
+		mcDao.update();
+		mcDao.delete();
+		
+		Villian v1=new Villian("redskull","red","guns");
+		Villian v2=new Villian("doctoroctopuss","black","octopussstings");
+		Villian v3=new Villian("greengoblin","green","glider");
+		Villian v4=new Villian("dormamu","pink","magic");
+		Villian v5=new Villian("carnage","red","like spider webs");
+		Villian v6=new Villian("thanos","pink","infinity_gaunlet");
+		
+		
+		vDao.insert(v1);
+		vDao.insert(v2);
+		vDao.insert(v3);
+		vDao.insert(v4);
+		vDao.insert(v5);
+		vDao.insert(v6);
+		
+		mcDao.getAllMarvels();
+		vDao.getAllVillians();
+		
+	}
+
+}

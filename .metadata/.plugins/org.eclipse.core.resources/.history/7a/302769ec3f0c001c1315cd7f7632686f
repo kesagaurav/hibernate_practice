@@ -1,0 +1,33 @@
+package com.gaurav;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.gaurav.dao.MarvelCrudDao;
+import com.gaurav.dbutil.HibernateUtil;
+import com.gaurav.model.Marvel;
+
+public class Main {
+	
+	public static void main(String[] args) {
+	HibernateUtil hutil=new HibernateUtil();
+	MarvelCrudDao mcDao=new MarvelCrudDao(hutil);
+	Marvel mar=new Marvel("ironman","red","shooters");
+	Marvel mar1=new Marvel("captainamerica","blue","sheild");
+	Marvel mar2=new Marvel("blackwidwo","black","gun");
+	Marvel mar3=new Marvel("nickfury","one eyed man","nullifeir");
+	Marvel mar4=new Marvel("hulk","green","strongarms");
+	//mcDao.insert(mar);
+	mcDao.insert(mar1);
+	mcDao.insert(mar2);
+	mcDao.insert(mar3);
+	mcDao.update(mar3);
+	mcDao.insert(mar4);
+	mcDao.getAllMarvel();
+		
+		
+		
+		
+		
+	}
+}

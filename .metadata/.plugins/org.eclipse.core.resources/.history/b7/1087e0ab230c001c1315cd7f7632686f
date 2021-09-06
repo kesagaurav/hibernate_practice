@@ -1,0 +1,59 @@
+package com.gaurav.model;
+
+import javax.persistence.Table;
+
+import org.hibernate.annotations.Entity;
+
+@Entity
+@Table
+public class Marvel {
+
+	public int id;
+	public String name;
+	public String color;
+	public String weapons;
+	public Marvel() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Marvel(int id, String name, String color, String weapons) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.color = color;
+		this.weapons = weapons;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	public String getWeapons() {
+		return weapons;
+	}
+	public void setWeapons(String weapons) {
+		this.weapons = weapons;
+	}
+	@Override
+	public String toString() {
+		return "Marvel [id=" + id + ", name=" + name + ", color=" + color + ", weapons=" + weapons + "]";
+	}
+
+
+	
+	
+
+}
